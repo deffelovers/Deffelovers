@@ -1,0 +1,14 @@
+
+.jumbotron{
+    padding-top: 10rem;
+    /* position: absolute; */
+    background-image: url('media/bg-2.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* background-color: #3e3e3e; */
+}
+
+section{
+    margin-top: 5rem;
+}
