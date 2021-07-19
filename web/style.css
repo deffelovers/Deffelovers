@@ -1,14 +1,38 @@
-
-.jumbotron{
-    padding-top: 10rem;
-    /* position: absolute; */
-    background-image: url('media/bg-2.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    /* background-color: #3e3e3e; */
+.myNav li{
+    margin: 0 10px;
+    padding: 0 5px;
 }
-
-section{
-    margin-top: 5rem;
+.myNav li a{
+    color: black;
+    border-radius: 5px;
+    border: 0.5px solid white;
+    transition: 100ms ease-out;
+}
+.myNav li a:hover{
+    border-radius: 5px;
+    color: dodgerblue;
+    border: 0.5px solid dodgerblue;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
+}
+.myNav li a:active{
+    transform: scale(0.8);
+    background-color: #f5f5f5;
+}
+.myBar{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    align-items: center;
+    transition: 100ms ease-out;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 990px) {
+    .myBar{
+        display: flex;
+        margin-top: 25px;
+        list-style: none;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
