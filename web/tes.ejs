@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/config/socket/socket.io.min.js"></script>
+    <!-- <script src="/config/jquery/jquery-3.6.0.min.js"></script> -->
+    <!-- <script src="/config/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="/config/style.css"> -->
+    <!-- <link rel="stylesheet" href="/config/bootstrap/css/bootstrap.min.css"> -->
+    <title>Deffelovers</title>
+</head>
+<body>
+    <input type="text" value="" id="field">
+    <button id="reset">reset</button>
+    <h1></h1>
+
+    <script>
+        const socket = io('localhost:2400')
+
+        socket.on('require', (data)=>{
+            document.querySelector('h1').innerHTML = data
+        })
+        document.getElementById('reset').onclick= function() {
+        const field= document.getElementById('field');
+        field.value= field.defaultValue;
+        };
+        // const push = () =>{
+        //     const msgInput = document.querySelector('.message')
+        //     const message = msgInput.value
+        //     socket.emit('require', message)
+        // }
+    </script>
+</body>
+</html>
