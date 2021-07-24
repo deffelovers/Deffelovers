@@ -1,6 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 /* 
 * css by Deffelovers (‎19 ‎Juli ‎2021)
 */
+
+/* remove list style */
+li{
+    list-style: none;
+}
 
 /* hide scrollbar */
 ::-webkit-scrollbar {
@@ -9,7 +21,13 @@
 
 /* Animeation */
 body{
-    animation: fade .5s ease-in-out;
+    -webkit-animation: fade .5s ease-in-out;
+            animation: fade .5s ease-in-out;
+}
+@-webkit-keyframes fade{
+    0%{
+        opacity: 0;
+    }
 }
 @keyframes fade{
     0%{
@@ -31,34 +49,53 @@ li a.f-15{
     color: #000000;
     border-radius: 5px;
     border: 0.5px solid #fff;
+    -webkit-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
 }
 .myNav li a:hover{
     border-radius: 5px;
     color: #1e90ff;
     border: 0.5px solid #1e90ff;
-    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
+    -webkit-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
+            box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
 }
 .myNav li a:active{
-    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
     background-color: #f5f5f5;
 }
 .myBar{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     list-style: none;
     padding-left: 0;
     margin: 0;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: 100ms ease-out;
+    -o-transition: 100ms ease-out;
     transition: 100ms ease-out;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 @media screen and (max-width: 990px) {
     .myBar{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         margin-top: 25px;
         list-style: none;
-        align-items: center;
-        justify-content: space-evenly;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
     }
 }
 
@@ -88,11 +125,20 @@ ul li a.active{
 
 /* Background size */
 .hero-ctn{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .hero-ctn h4{
@@ -249,47 +295,88 @@ ul li a.active{
 
 /* Tools style */
 .cr-bd{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 1rem 0;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 @media screen and (max-width: 990px) {
     .cr-bd{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         padding: 1rem 0;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: column;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 }
 
 .cd-ct{
     width: 140px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 .cd-ct img{
     margin-bottom: 10px;
     height: 140px;
 }
 .cd-ct .cl-row{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+    
+#ttl{
+    font-size: 14px;
 }
 
 .col .my-card{
+    font-size: 12px;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     padding: 1rem;
     position: absolute;
+    -webkit-transition: 350ms ease-in-out;
+    -o-transition: 350ms ease-in-out;
     transition: 350ms ease-in-out;
-    background-color: #0000005c;
-    transform: translateY(100%);
+    background-color: #000000c9;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+}
+@media screen and (max-width: 990px) {
+    .col .my-card{
+        font-size: 18px;
+    }
+    #ttl{
+        font-size: 24px;
+    }
 }
 .col .view:hover .my-card{
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
 }
-

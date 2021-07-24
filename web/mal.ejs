@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/config/socket/socket.io.min.js"></script>
-    <script src="/config/jquery/jquery-3.6.0.min.js"></script>
     <script src="/config/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.min.js" integrity="sha512-fB746S+jyTdN2LSWbYSGP2amFYId226wpOeV4ApumcDpIttPxvk1ZPOgnwqwQziRAtZkiFJVx9F64GLAtoIlCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="/config/jquery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/config/ligth.css">
     <link rel="stylesheet" href="/config/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <title>Deffelovers</title>
+    <title>Deffelovers | MAL</title>
 </head>
 <body style="background-color: #ebebeb">
   <nav class="fixed-top navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: white;">
     <div class="container">
-      <a class="navbar-brand fw-bold">Deffelovers</a>
+      <a class="navbar-brand fw-bold">Deffelovers | MAL</a>
       <button id="btn" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" type="button">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,64 +49,31 @@
         </div>
       </div>
     </div>
-    <div id="ty-a" class="row" style="padding-bottom: 20px;">
+    <div id="mal-data" class="row" style="padding-bottom: 20px;">
       <div class="col">
         <div class="card">
-          <h5 class="card-header">Jenis A:</h5>
+          <h6 class="card-header">Hasil yang di dapat: <%= data.length %> <i class="text-muted">(Data di update otomatis.)</i></h6>
           <div class="card-body">
-            <div id="mal-r" class="row row-cols-1 row-cols-md-5 g-4">
-              <div class="col">
-                <div class="card h-100 view" style="overflow-y: hidden;">
-                  <img src="/config/media/bg/sample0.jpg" class="card-img-top" alt="...">
-                  <div class="my-card text-white">
-                    <h6 class="card-title">judul</h6>
-                    <hr>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additionalcontent. This content is a little bit longer.</p>
+            <div class="row align-items-center row-cols-1 row-cols-md-6 g-4">
+              <% for (let i = 0; i < data.length; i++) { %>
+                <div class="col mal-col">
+                  <div class="card h-100 view" style="overflow-y: hidden;">
+                    <img src="<%= data[i].thumb %>" class="card-img-top" alt="<%= data[i].title %>">
+                    <div class="my-card text-white">
+                      <div id="ttl"><i><%= data[i].title %></i></div>
+                      <hr>
+                      <p class="card-text">
+                        <li><b>Type:</b><i> <%= data[i].media_type %></i></li>
+                        <li><b>Score Self:</b><i> <%= data[i].score %></i></li>
+                        <li><b>Total Eps:</b><i> <%= data[i].eps %></i></li>
+                        <li><b>On Watch Eps:</b><i> <%= data[i].eps_watch %></i></li>
+                        <li><b>Fin Watch:</b><i> <%= data[i].finish_date %></i></li>
+                        <li><b>End Of Date:</b><i> <%= data[i].end_date %></i></li>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="ty-b" class="row" style="padding-bottom: 20px;">
-      <div class="col">
-        <div class="card">
-          <h5 class="card-header">Jenis B:</h5>
-          <div class="card-body">
-            <div id="mal-r" class="row row-cols-1 row-cols-md-5 g-4">
-              <div class="col">
-                <div class="card h-100 view" style="overflow-y: hidden;">
-                  <img src="/config/media/bg/sample0.jpg" class="card-img-top" alt="...">
-                  <div class="my-card text-white">
-                    <h6 class="card-title">judul</h6>
-                    <hr>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additionalcontent. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="ty-c" class="row" style="padding-bottom: 20px;">
-      <div class="col">
-        <div class="card">
-          <h5 class="card-header">Jenis C:</h5>
-          <div class="card-body">
-            <div id="mal-r" class="row row-cols-1 row-cols-md-5 g-4">
-              <div class="col">
-                <div class="card h-100 view" style="overflow-y: hidden;">
-                  <img src="/config/media/bg/sample0.jpg" class="card-img-top" alt="...">
-                  <div class="my-card text-white">
-                    <h6 class="card-title">judul</h6>
-                    <hr>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additionalcontent. This content is a little bit longer.</p>
-                  </div>
-                </div>
-              </div>
+              <% } %>
             </div>
           </div>
         </div>
@@ -118,6 +84,5 @@
       <div class="col text-center text-muted">Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh <a href="https://www.facebook.com/nazal.zikry/" target="_blank" class="text-muted fw-bold">Deffelovers</a></div>
     </div>
   </div>
-<script src="/config/locJS/mal-script.js"></script>
 </body>
 </html>
