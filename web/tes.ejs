@@ -1,36 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/config/socket/socket.io.min.js"></script>
-    <!-- <script src="/config/jquery/jquery-3.6.0.min.js"></script> -->
-    <!-- <script src="/config/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <!-- <link rel="stylesheet" href="/config/style.css"> -->
-    <!-- <link rel="stylesheet" href="/config/bootstrap/css/bootstrap.min.css"> -->
-    <title>Deffelovers</title>
+	<meta charset="UTF-8">
+	<title>Document</title>
 </head>
 <body>
-    <input type="text" value="" id="field">
-    <button id="reset">reset</button>
-    <h1></h1>
 
-    <script>
-        const socket = io('localhost:2400')
+<p>
+  <textarea class="js-copytextarea">Hello I'm some text</textarea>
+</p>
 
-        socket.on('require', (data)=>{
-            document.querySelector('h1').innerHTML = data
-        })
-        document.getElementById('reset').onclick= function() {
-        const field= document.getElementById('field');
-        field.value= field.defaultValue;
-        };
-        // const push = () =>{
-        //     const msgInput = document.querySelector('.message')
-        //     const message = msgInput.value
-        //     socket.emit('require', message)
-        // }
-    </script>
+<p>
+  <button class="js-textareacopybtn">Copy Textarea</button>
+</p>
+
+<p>
+  <button class="js-copy-bob-btn">Set clipboard to BOB</button>
+  <button class="js-copy-jane-btn">Set clipboard to JANE</button>
+</p>
+<p>
+  <textarea class="js-test-textarea" cols="50" rows="10">Try pasting into here to see what you have on your clipboard:
+  
+  </textarea>
+</p>
+
 </body>
+
+<script>
+	
+
+['cut', 'copy', 'paste'].forEach(function(event) {
+	console.log(event)
+    document.addEventListener(event, function(e) {
+        console.log(event);   
+    });
+});
+
+var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+
+copyTextareaBtn.addEventListener('click', function(event) {
+  var copyTextarea = document.querySelector('.js-copytextarea');
+  copyTextarea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+});
+
+
+function getImageData(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var imgd = canvas.toDataURL("image/png");
+    return imgd;
+}
+
+
+function copyImage(url){
+    var img=document.createElement('img');
+    img.src=url;
+    document.body.appendChild(img);
+    var r = document.createRange();
+    r.setStartBefore(img);
+    r.setEndAfter(img);
+    r.selectNode(img);
+    var sel = window.getSelection();
+    sel.addRange(r);
+    document.execCommand('Copy');
+}
+
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  //
+  // *** This styling is an extra step which is likely not required. ***
+  //
+  // Why is it here? To ensure:
+  // 1. the element is able to have focus and selection.
+  // 2. if element was to flash render it has minimal visual impact.
+  // 3. less flakyness with selection and copying which **might** occur if
+  //    the textarea element is not visible.
+  //
+  // The likelihood is the element won't even render, not even a flash,
+  // so some of these are just precautions. However in IE the element
+  // is visible whilst the popup box asking the user for permission for
+  // the web page to copy to the clipboard.
+  //
+
+  // Place in top-left corner of screen regardless of scroll position.
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+
+  // Ensure it has a small width and height. Setting to 1px / 1em
+  // doesn't work as this gives a negative w/h on some browsers.
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+
+  // We don't need padding, reducing the size if it does flash render.
+  textArea.style.padding = 0;
+
+  // Clean up any borders.
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+
+  // Avoid flash of white box if rendered for any reason.
+  textArea.style.background = 'transparent';
+
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+
+var copyBobBtn = document.querySelector('.js-copy-bob-btn'),
+  copyJaneBtn = document.querySelector('.js-copy-jane-btn');
+
+copyBobBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('Bob');
+  copyImage('https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=150')
+});
+
+
+copyJaneBtn.addEventListener('click', function(event) {
+  copyTextToClipboard('Jane');
+});
+
+</script>
+	
 </html>

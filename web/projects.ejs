@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/config/socket/socket.io.min.js"></script>
+    <script src="/config/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/config/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/config/ligth.css">
+    <link rel="stylesheet" href="/config/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Deffelovers</title>
+</head>
+<body style="background-color: #ebebeb">
+  <nav class="fixed-top navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: white;">
+    <div class="container">
+      <a class="navbar-brand fw-bold">Deffelovers</a>
+      <button id="btn" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" type="button">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="myBar ms-auto myNav">
+          <li class="nav-item"><a class="nav-link cl" href="/" title="Beranda"><i class="bi bi-house"></i></a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false" title="Lainya"><i class="bi bi-person"></i></a>
+            <ul class="dropdown-menu dropdown-menu-ligth" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><h6 class="dropdown-header">Sosial:</h6></li>
+              <li><a class="nav-link f-15" href="https://www.facebook.com/nazal.zikry/" target="_blank"><i class="bi bi-facebook"></i> Facebook</a></li>
+              <li><a class="nav-link f-15" href="https://www.instagram.com/deffelovers_31/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a></li>
+              <li><a class="nav-link f-15" href="https://github.com/deffelovers/" target="_blank"><i class="bi bi-github"></i> Github</a></li><li><h6 class="dropdown-header">Spesial:</h6></li>
+              <li><a class="nav-link f-15" href="/mal">My Anime List</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link cl active" href="/projects" title="Proyek"><i class="bi bi-box-seam"></i></a></li>
+          <li class="nav-item"><a class="nav-link cl" href="/tools" title="Peralatan"><i class="bi bi-gear"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" id="ctn" style="margin-top: 4.5rem;">
+    <div class="row" style="padding-bottom: 20px;">
+      <div class="col">
+        <div id="projects">
+          <div class="col hero-ctn">
+            <img class="prof" src="/config/media/ico/projects.png" alt="Deffelvoers">
+            <h4 class="text-white">Proyek</h4>
+            <li class="text-white text-center">Beberapa Proyek yang pernah di buat.</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="padding-bottom: 20px;">
+      <div class="col" style="height: 50rem;">
+        ini konten ke 2
+      </div>
+    </div>
+  </div>
+  <div class="cl-fo bg-light">
+    <div class="container">
+      <div class="col text-center text-muted">Dibuat dengan <i class="bi bi-heart-fill text-danger"></i> oleh <a href="https://www.facebook.com/nazal.zikry/" target="_blank" class="text-muted fw-bold">Deffelovers</a></div>
+    </div>
+  </div>
+<!-- <script src="/config/locJS/prj-script.js"></script> -->
+</body>
+</html>
