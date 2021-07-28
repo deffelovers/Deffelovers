@@ -351,32 +351,43 @@ ul li a.active{
     font-size: 14px;
 }
 
-.col .my-card{
-    font-size: 12px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1rem;
+/* mal */
+.mal-data {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+div.mal-item{
+    padding: 8px;
+    max-width: 12rem;
+    font-size: 75%;
+}
+@media screen and (max-width: 990px) {
+    div.mal-item{
+        padding: 6px;
+        font-size: 10px;
+        max-width: 10rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    div.mal-item{
+        padding: 4px;
+        font-size: 8px;
+        max-width: 8rem;
+    }
+}
+
+.card-img-overlay{
     position: absolute;
     -webkit-transition: 350ms ease-in-out;
     -o-transition: 350ms ease-in-out;
     transition: 350ms ease-in-out;
     background-color: #000000c9;
-    -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-            transform: translateY(100%);
+    opacity: 0;
 }
-@media screen and (max-width: 990px) {
-    .col .my-card{
-        font-size: 18px;
-    }
-    #ttl{
-        font-size: 24px;
-    }
-}
-.col .view:hover .my-card{
-    -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+
+.mal-item:hover .card-img-overlay{
+    opacity: 100%;
 }
