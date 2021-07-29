@@ -7,7 +7,7 @@ const port = process.env.PORT || 2400
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'web'))
 app.use(express.urlencoded({extended: false}))
-app.use('/config', express.static(path.join(__dirname, 'web')))
+app.use('/root', express.static(path.join(__dirname, 'web/root')))
 app.use('/favicon.ico', express.static(path.join(__dirname, 'web/favicon.ico')))
 // socket.io //
 io.on('connection', (socket) =>{
@@ -43,7 +43,7 @@ app.get('/mal', (req, res) =>{
                     end_date: e.anime_end_date_string,
                     eps_watch: e.num_watched_episodes,
                     finish_date: e.finish_date_string,
-                    type: e.anime_media_type_string + '\t' + e.anime_mpaa_rating_string,
+                    type: e.anime_media_type_string + ', ' + e.anime_mpaa_rating_string,
                     thumb: `https://cdn.myanimelist.net/images/${e.anime_image_path.split('/')[6]}/${e.anime_image_path.split('/')[7]}/${e.anime_image_path.split('/')[8]}`,
                 }
             })

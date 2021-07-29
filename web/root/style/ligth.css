@@ -164,7 +164,7 @@ ul li a.active{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/config/media/bg/bg-3-blured.jpg');
+    background-image: url('/root/media/bg/bg-3-blured.jpg');
 }
 @media screen and (max-width: 990px) {
     .col div#home{
@@ -173,7 +173,7 @@ ul li a.active{
         background-size: 50rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-3-blured.jpg');
+        background-image: url('/root/media/bg/bg-3-blured.jpg');
     }
 }
 @media screen and (max-width: 425px) {
@@ -183,7 +183,7 @@ ul li a.active{
         background-size: 55rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-3-blured.jpg');
+        background-image: url('/root/media/bg/bg-3-blured.jpg');
     }
 }
 
@@ -194,7 +194,7 @@ ul li a.active{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/config/media/bg/bg-2-blured.jpg');
+    background-image: url('/root/media/bg/bg-2-blured.jpg');
 }
 @media screen and (max-width: 990px) {
     .col div#tools{
@@ -203,7 +203,7 @@ ul li a.active{
         background-size: 50rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-2-blured.jpg');
+        background-image: url('/root/media/bg/bg-2-blured.jpg');
     }
 }
 @media screen and (max-width: 425px) {
@@ -213,7 +213,7 @@ ul li a.active{
         background-size: 55rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-2-blured.jpg');
+        background-image: url('/root/media/bg/bg-2-blured.jpg');
     }
 }
 
@@ -224,7 +224,7 @@ ul li a.active{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/config/media/bg/bg-4-blured.jpg');
+    background-image: url('/root/media/bg/bg-4-blured.jpg');
 }
 @media screen and (max-width: 990px) {
     .col div#projects{
@@ -233,7 +233,7 @@ ul li a.active{
         background-size: 50rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-4-blured.jpg');
+        background-image: url('/root/media/bg/bg-4-blured.jpg');
     }
 }
 @media screen and (max-width: 425px) {
@@ -243,18 +243,19 @@ ul li a.active{
         background-size: 55rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-4-blured.jpg');
+        background-image: url('/root/media/bg/bg-4-blured.jpg');
     }
 }
 
 /* MyAnimeList */
+
 .col div#mal{
     height: 25rem;
     border-radius: 5px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/config/media/bg/bg-5-blured.jpg');
+    background-image: url('/root/media/bg/bg-5-blured.jpg');
 }
 @media screen and (max-width: 990px) {
     .col div#mal{
@@ -263,7 +264,7 @@ ul li a.active{
         background-size: 50rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-5-blured.jpg');
+        background-image: url('/root/media/bg/bg-5-blured.jpg');
     }
 }
 @media screen and (max-width: 425px) {
@@ -273,7 +274,7 @@ ul li a.active{
         background-size: 55rem;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('/config/media/bg/bg-5-blured.jpg');
+        background-image: url('/root/media/bg/bg-5-blured.jpg');
     }
 }
 
@@ -353,6 +354,7 @@ ul li a.active{
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+            align-items: flex-end;
 }
 
 div.mal-item{
@@ -385,12 +387,13 @@ div.mal-item{
     left: 0;
     padding: 10px;
     position: absolute;
-    -webkit-transition: 350ms ease-in-out;
-    transition: 350ms ease-in-out;
+    -webkit-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
     background-color: #000000c9;
     opacity: 0;
 }
 
 .mal-item:hover .card-io{
     opacity: 100%;
+    cursor: default;
 }

@@ -9,8 +9,8 @@ $(document).ready(function(){
     socket.on('MAL', (res) =>{
         // const mal_p = document.querySelector('.row div#mal-r');
         if(res != false){
-            const ch = (res.success == true) ? res.data : document.querySelector('.row div#mal-r').innerHTML = `<hr><div id="ntf" class="text-muted text-center" style="font-size: 14px;"><i>${res.e.message}</i></div><hr>`
-            // console.log(ch)
+            const ch = (res.success == true) ? res.data : res.data
+            console.log(ch)
         }else{
             document.querySelector('.row div#mal-r').innerHTML = '<hr><div id="ntf" class="text-muted text-center" style="font-size: 14px;"><i>Input kosong!.</i></div><hr>'
         }
