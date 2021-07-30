@@ -392,7 +392,6 @@ div.mal-item{
     background-color: #000000c9;
     opacity: 0;
 }
-
 .mal-item:hover .card-io{
     opacity: 100%;
     cursor: default;

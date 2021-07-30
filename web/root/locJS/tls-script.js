@@ -10,9 +10,10 @@ $(document).ready(function(){
         // const mal_p = document.querySelector('.row div#mal-r');
         if(res != false){
             const ch = (res.success == true) ? res.data : res.data
-            console.log(ch)
+            // console.log(ch)
+            
         }else{
-            document.querySelector('.row div#mal-r').innerHTML = '<hr><div id="ntf" class="text-muted text-center" style="font-size: 14px;"><i>Input kosong!.</i></div><hr>'
+            document.querySelector('.row div.mal-data').innerHTML = '<hr><div id="ntf" class="text-muted text-center" style="font-size: 14px;"><i>Input kosong!.</i></div><hr>'
         }
         $(res).ready(function(){
             document.querySelector('.mb-3 input#mal-s').value = document.querySelector('.mb-3 input#mal-s').defaultValue;
