@@ -4,6 +4,7 @@ const path = require('path')
 const server = require('http').createServer(app)
 const io = require('socket.io')(server, {cors: {origin: '*'}})
 const port = process.env.PORT || 2400
+// 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'web'))
 app.use(express.urlencoded({extended: false}))
@@ -21,6 +22,7 @@ io.on('connection', (socket) =>{
         socket.emit('MAL', mal_d)
     })
 })
+
 // web services //
 app.get('/', (req, res) =>{
     res.render('index.ejs')
@@ -54,6 +56,35 @@ app.get('/mal', (req, res) =>{
 
 app.get('/projects', (req, res) =>{
     res.render('projects.ejs')
+})
+
+app.get('/tes', (req, res) =>{
+    io.on('tes', (socket) =>{
+        console.log(socket)
+    })
+    res.render('tes.ejs')
+})
+
+// API services
+
+app.get('/api/v1/qr', (req, res) =>{
+    (req.query.text == undefined || req.query.text == '') ? res.send({success: false, msg: 'Input salah!!'}) : res.send({success: true, data64: 'data:image/png;base64,' + require('qr-image').imageSync(req.query.text, {type: 'png'}).toString('base64')})
+})
+
+app.get('/api/v1/mal', async(req, res) =>{
+    const mal = (req.query.search == undefined || req.query.search == '') ? {succes: false, msg: 'Bad Request.'} : {success: true, note: 'Data ini di ambil dari: https://www.myanimelist.net', data: await require('axios').get(`https://myanimelist.net/search/prefix.json?type=anime&keyword=${req.query.search}`).then(res => res.data.categories[0].items.map(e =>
+    {
+        return{
+            id: e.id,
+            type: e.payload.media_type,
+            score: e.payload.score,
+            title: e.name,
+            aired: e.payload.aired,
+            url: e.url,
+            thumb: `https://cdn.myanimelist.net/images/${e.image_url.split('/')[6]}/${e.image_url.split('/')[7]}/${e.image_url.split('/')[8]}`,
+        }
+    })).catch(er => er.data)}
+    res.send(mal)
 })
 
 app.get('/*', (req, res) =>{

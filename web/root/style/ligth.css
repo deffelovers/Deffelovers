@@ -329,14 +329,6 @@ ul li a.active{
     margin-bottom: 10px;
     height: 140px;
 }
-.cd-ct .cl-row{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    }
-    
 #ttl{
     font-size: 14px;
 }
@@ -358,20 +350,17 @@ ul li a.active{
 }
 
 div.mal-item{
-    /* padding: 8px; */
-    max-width: 10rem;
+    max-width: 12rem;
     font-size: 70%;
 }
 @media screen and (max-width: 990px) {
     div.mal-item{
-        /* padding: 6px; */
         font-size: 70%;
         max-width: 10rem;
     }
 }
 @media screen and (max-width: 425px) {
     div.mal-item{
-        /* padding: 4px; */
         font-size: 75%;
         max-width: 8rem;
     }
