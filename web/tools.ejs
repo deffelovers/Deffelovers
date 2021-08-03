@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/root/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.min.js" integrity="sha512-fB746S+jyTdN2LSWbYSGP2amFYId226wpOeV4ApumcDpIttPxvk1ZPOgnwqwQziRAtZkiFJVx9F64GLAtoIlCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/root/jquery/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="/root/style/ligth.css" />
     <link rel="stylesheet" href="/root/bootstrap/css/bootstrap.min.css" />
@@ -38,14 +37,14 @@
         </div>
       </div>
     </nav>
-    <div class="container" id="ctn" style="margin-top: 4.5rem;">
+    <div class="container" id="ctn" style="margin-top: 4.4rem;">
       <div class="row" style="padding-bottom: 20px;">
         <div class="col">
           <div id="tools">
             <div class="col hero-ctn">
               <img class="prof" src="/root/media/ico/tools.png" alt="Deffelvoers"/>
-              <h4 class="text-white">Pelaratan</h4>
-              <li class="text-white text-center">Pelaratan akan di perbaharui di hari mendatang.</li>
+              <h4 class="text-white">Peralatan</h4>
+              <li class="text-white text-center">Peralatan akan di perbaharui di hari mendatang.</li>
             </div>
           </div>
         </div>
@@ -60,7 +59,7 @@
                   <h3>Masukan input:</h3>
                   <div class="input-group mb-3">
                     <button id="qr-btn" class="btn btn-outline-primary" type="submit"><i class="bi bi-hammer"></i></button>
-                    <input id="qr-input" value="" type="text" class="form-control" placeholder="Jenis text / url"/>
+                    <input id="qr-input" type="text" class="form-control" placeholder="Jenis text / url"/>
                   </div>
                 </div>
               </div>
@@ -72,47 +71,20 @@
           </div>
         </div>
       </div>
-      <div class="row" style="padding-bottom: 20px;">
-        <div class="col">
-          <div class="card shadow-sm">
-            <h5 class="card-header">Anime search</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col">
-                  <label class="form-label">Masukan judul Anime:</label>
-                  <div class="input-group mb-3">
-                    <button id="mal-btn0" class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
-                    <button id="mal-btn1" class="btn btn-outline-primary d-none" type="submit" disabled><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span></button>
-                    <input id="mal-s" type="text" class="form-control" />
-                  </div>
-                  <div class="form-text">Data di ambil dari API My Anime List.</div>
-                </div>
-              </div>
-              <hr/>
-              <div class="mal-data">
-                <div>
-                  <div class="mal-item" style="padding: 5px;">
-                    <div class="card text-white">
-                      <img src="/root/media/bg/sample0.jpg" class="card-img" alt=""/>
-                      <div class="card-io">
-                        <B><i>ttt</i></B><hr>
-                        <p>
-                          <li><b>Type:</b><i> </i></li>
-                          <li><b>Score Self:</b><i> </i></li>
-                          <li><b>Total Eps:</b><i> </i></li>
-                          <li><b>On Watch Eps:</b><i> </i></li>
-                          <li><b>Fin Watch:</b><i> </i></li>
-                          <li><b>End Of Date:</b><i> </i></li>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col" style="padding-top: 10px; padding: 5px;">
-                    <a href="#" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 14px;">Lihat di <b>MAL</b></a>
-                  </div>
-                </div>
-              </div>
+      <div style="padding-bottom: 20px;">
+        <div class="card">
+          <h6 class="card-header">Anime Search</h6>
+          <div style="margin: 0 20px; margin-top: 20px">
+            <label class="form-label">Masukan judul Anime:</label>
+            <div class="input-group mb-3">
+                <button id="mal-btn" class="btn btn-outline-primary"><i class="bi bi-search"></i></button>
+                <input id="mal-input" type="text" class="form-control" />
             </div>
+          </div><hr>
+          <div class="mal-data">
+            <!--  -->
+            <i class="text-muted">Data akan ditampilkan di sini.</i>
+            <!--  -->
           </div>
         </div>
       </div>
