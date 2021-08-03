@@ -217,6 +217,16 @@ ul li a.active{
     }
 }
 
+.bi-arrow-repeat::before {
+    content: "\f130";
+    animation: loop .4s linear infinite;
+}
+@keyframes loop{
+    to{
+        transform: rotate(180deg)
+    }
+}
+
 /* Projects */
 .col div#projects{
     height: 25rem;
