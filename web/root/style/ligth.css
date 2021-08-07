@@ -378,3 +378,11 @@ div.mal-item{
         display: none;
     }
 }
+
+.card img{
+    transition: 300ms ease-in-out;
+    opacity: 50%;
+}
+.card img:hover{
+opacity: 100%;
+}
