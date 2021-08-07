@@ -58,10 +58,10 @@ app.get('/api/v1/qr', (req, res) => {
 })
 
 app.get('/api/v1/mal', async (req, res) => {
-  req.query.search == undefined || req.query.search == '' ? res.send({ succes: false, msg: 'Input tidak valid!!.' }) :
+  (req.query.search == undefined || req.query.search == '') ? res.send({ success: false, msg: 'Metode yang digunakan salah.' }) :
   require('request')(`https://myanimelist.net/search/prefix.json?type=anime&keyword=${req.query.search}`, (err, response, html) => {
     if (!err && response.statusCode == 200){
-      const mal_s = html.map(e =>{
+      const mal_s = JSON.parse(html).categories[0].items.map(e =>{
         return {
           id: e.id,
           type: e.payload.media_type,
@@ -72,7 +72,7 @@ app.get('/api/v1/mal', async (req, res) => {
           thumb: `https://cdn.myanimelist.net/images/${e.image_url.split('/')[6]}/${e.image_url.split('/')[7]}/${e.image_url.split('/')[8]}`,
         }
       })
-      res.send({ succes: false, data: mal_s })
+      res.send({ success: true, data: mal_s})
     }else res.send({ succes: false, msg:  `Gagal menghubungkan ke server ${err.hostname}` })
   })
 })

@@ -217,13 +217,13 @@ ul li a.active{
     }
 }
 
-.bi-arrow-repeat::before {
+.rotate::before {
     content: "\f130";
     animation: loop .4s linear infinite;
 }
 @keyframes loop{
-    to{
-        transform: rotate(180deg)
+    0%{
+        transform: rotate(-180deg)
     }
 }
 
@@ -377,21 +377,4 @@ div.mal-item{
     div.mal-item li{
         display: none;
     }
-}
-
-.card-io{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    position: absolute;
-    -webkit-transition: 250ms ease-in-out;
-    transition: 250ms ease-in-out;
-    background-color: #000000c9;
-    opacity: 0;
-}
-.mal-item:hover .card-io{
-    opacity: 100%;
-    cursor: default;
 }
