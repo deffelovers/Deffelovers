@@ -352,11 +352,19 @@ ul li a.active{
         flex-wrap: wrap;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
+        align-items: center;
+        -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-content: center;
-            align-items: flex-end;
+        justify-content: center;
+        align-items: flex-end;
+}
+
+#mal-list{
+    transition: 250ms ease-in-out;
+    opacity: 70%;
+}
+#mal-list:hover{
+opacity: 100%;
 }
 
 div.mal-item{
@@ -377,12 +385,4 @@ div.mal-item{
     div.mal-item li{
         display: none;
     }
-}
-
-.card img{
-    transition: 300ms ease-in-out;
-    opacity: 50%;
-}
-.card img:hover{
-opacity: 100%;
 }

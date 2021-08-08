@@ -56,16 +56,16 @@
         <div class="mal-data" style="margin: 20px 0">
           <!--  -->
           <% for (let i = 0; i < data.length; i++) { %>
-            <div>
+            <div id="mal-list">
               <div class="mal-item" style="padding: 5px;">
                 <div class="card text-white">
                   <img src="<%= data[i].thumb %>" class="card-img" alt="<%= data[i].title %>" tabindex="0" data-bs-toggle="mal-items" data-bs-obj="<%= JSON.stringify(data[i]) %>">
                 </div>
               </div>
               <div class="col" style="padding-top: 10px; padding: 5px;">
-                  <a href="https://myanimelist.net<%= data[i].url %>" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 14px;">Lihat di <b>MAL</b></a>
-                </div>
+                <a href="https://myanimelist.net<%= data[i].url %>" target="_blank" class="btn btn-primary" style="width: 100%; font-size: 14px;">Lihat di <b>MAL</b></a>
               </div>
+            </div>
           <% } %>
         </div>
         <% }else{ %>
