@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* 
 * css by Deffelovers (‎19 ‎Juli ‎2021)
 */
@@ -12,7 +19,31 @@ li{
     display: none;
 }
 
-/* Animeation */
+/* font size 15px */
+li a.f-15{
+    font-size: 14px;
+}
+
+/* Rotate animation */
+.rotate::before {
+    content: "\f130";
+    -webkit-animation: loop .4s linear infinite;
+            animation: loop .4s linear infinite;
+}
+@-webkit-keyframes loop{
+    0%{
+        -webkit-transform: rotate(-180deg);
+                transform: rotate(-180deg)
+    }
+}
+@keyframes loop{
+    0%{
+        -webkit-transform: rotate(-180deg);
+                transform: rotate(-180deg)
+    }
+}
+
+/* Animation */
 body{
     -webkit-animation: fade .5s ease-in-out;
             animation: fade .5s ease-in-out;
@@ -28,9 +59,16 @@ body{
     }
 }
 
-/* font size 15px */
-li a.f-15{
-    font-size: 14px;
+/* Button list on hover mouse */
+ul li a.active{
+    border-radius: 5px;
+    color: #1e90ff;
+    border: 0.5px solid #1e90ff;
+}
+
+/* footer */
+.cl-fo{
+    padding: 20px 0;
 }
 
 /* navbar */
@@ -43,17 +81,20 @@ li a.f-15{
     border-radius: 5px;
     border: 0.5px solid #fff;
     -webkit-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
     transition: 100ms ease-in-out;
 }
 .myNav li a:hover{
     border-radius: 5px;
     color: #1e90ff;
     border: 0.5px solid #1e90ff;
-    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
+    -webkit-box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
+            box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.145)!important;
 }
 .myNav li a:active{
     -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+            -ms-transform: scale(0.8);
+        transform: scale(0.8);
     background-color: #f5f5f5;
 }
 .myBar{
@@ -67,6 +108,7 @@ li a.f-15{
         -ms-flex-align: center;
             align-items: center;
     -webkit-transition: 100ms ease-out;
+    -o-transition: 100ms ease-out;
     transition: 100ms ease-out;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -86,12 +128,6 @@ li a.f-15{
             -ms-flex-pack: space-evenly;
                 justify-content: space-evenly;
     }
-}
-
-ul li a.active{
-    border-radius: 5px;
-    color: #1e90ff;
-    border: 0.5px solid #1e90ff;
 }
 
 /* procfile style*/
@@ -217,16 +253,6 @@ ul li a.active{
     }
 }
 
-.rotate::before {
-    content: "\f130";
-    animation: loop .4s linear infinite;
-}
-@keyframes loop{
-    0%{
-        transform: rotate(-180deg)
-    }
-}
-
 /* Projects */
 .col div#projects{
     height: 25rem;
@@ -288,9 +314,52 @@ ul li a.active{
     }
 }
 
-/* footer */
-.cl-fo{
-    padding: 20px 0;
+/* items on mal */
+.mal-data {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: end;
+            -ms-flex-align: end;
+                align-items: flex-end;
+}
+
+#mal-list{
+    -webkit-transition: 250ms ease-in-out;
+    -o-transition: 250ms ease-in-out;
+    transition: 250ms ease-in-out;
+    opacity: 70%;
+}
+#mal-list:hover{
+opacity: 100%;
+}
+
+div.mal-item{
+    max-width: 12rem;
+    font-size: 70%;
+}
+@media screen and (max-width: 990px) {
+    div.mal-item{
+        font-size: 70%;
+        max-width: 10rem;
+    }
+}
+@media screen and (max-width: 425px) {
+    div.mal-item{
+        font-size: 75%;
+        max-width: 8rem;
+    }
+    div.mal-item li{
+        display: none;
+    }
 }
 
 /* Tools style */
@@ -341,48 +410,4 @@ ul li a.active{
 }
 #ttl{
     font-size: 14px;
-}
-
-/* mal */
-.mal-data {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        align-items: flex-end;
-}
-
-#mal-list{
-    transition: 250ms ease-in-out;
-    opacity: 70%;
-}
-#mal-list:hover{
-opacity: 100%;
-}
-
-div.mal-item{
-    max-width: 12rem;
-    font-size: 70%;
-}
-@media screen and (max-width: 990px) {
-    div.mal-item{
-        font-size: 70%;
-        max-width: 10rem;
-    }
-}
-@media screen and (max-width: 425px) {
-    div.mal-item{
-        font-size: 75%;
-        max-width: 8rem;
-    }
-    div.mal-item li{
-        display: none;
-    }
 }
